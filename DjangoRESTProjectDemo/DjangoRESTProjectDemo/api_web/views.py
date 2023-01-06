@@ -18,6 +18,16 @@ class EmployeesListApiView(rest_views.ListCreateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
+    def get_queryset(self):
+        department_id = self.request.query_params.get('department_id')
+        queryset = self.queryset
+
+        if department_id:
+            queryset = queryset.filter(department_id=department_id)
+
+        return queryset.all()
+
+
 
 class DemoApiView(rest_base_views.APIView):
         def get(self, request):
