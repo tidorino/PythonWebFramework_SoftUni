@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+UserModel = get_user_model()
 
 
 class Category(models.Model):
@@ -24,13 +27,20 @@ class Todo(models.Model):
         blank=False,
     )
 
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.RESTRICT,
-    )
-
     is_done = models.BooleanField(
         default=DEFAULT_STATE,
         null=False,
         blank=False,
     )
+
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.RESTRICT,
+    )
+
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.RESTRICT,
+    )
+
+
