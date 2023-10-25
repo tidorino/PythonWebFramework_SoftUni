@@ -22,3 +22,5 @@ Will build our knowledge of Views through CBV. We will learn how to register, lo
 - Working with users, roles and sessions
 - Working with Class-Based Views
 - Unit and Integration testing
+
+![image](https://github.com/tidorino/PythonWebFramework_SoftUni/assets/97727834/6e15805b-5543-420f-98ef-c5a2ab00c4e7)
